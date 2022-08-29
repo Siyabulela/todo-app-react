@@ -18,17 +18,12 @@ function App() {
         setTodos={setTodos}
         setInputText={setInputText}
       />
-      <TodoList
-        todos={todos}
-        setTodos={setTodos}
-      />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
 
 export default App;
-// submiting empty todo should not be allowed
-// edit text
-// localstorage
+// submitting empty todo should not be allowed
+// localStorage
 // deadline todo
-// gitpod
