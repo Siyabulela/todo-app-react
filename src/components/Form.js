@@ -16,6 +16,14 @@ const Form = ({ setInputText, inputText, todos, setTodos }) => {
         },
       ]);
       setInputText("");
+      localStorage.setItem("todos", JSON.stringify([
+        ...todos,
+        {
+          text: inputText,
+          completed: false,
+          id: Date.now(),
+        },
+      ]));
     } else alert("Cannot submit empty string");
   };
   return (
