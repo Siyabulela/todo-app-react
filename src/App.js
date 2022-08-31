@@ -24,6 +24,5 @@ function App() {
 }
 
 export default App;
-// submitting empty todo should not be allowed
 // localStorage
 // deadline todo
