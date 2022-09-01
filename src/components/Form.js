@@ -1,4 +1,5 @@
 import React from "react";
+import passSetTodo from "../utils/passSetTodo";
 
 const Form = ({ setInputText, inputText, todos, setTodos }) => {
   const inputTextHandler = (e) => {
@@ -7,23 +8,10 @@ const Form = ({ setInputText, inputText, todos, setTodos }) => {
   const submitTodoHandler = (e) => {
     e.preventDefault();
     if (inputText.trim().length) {
-      setTodos([
-        ...todos,
-        {
-          text: inputText,
-          completed: false,
-          id: Date.now(),
-        },
-      ]);
+      setTodos(passSetTodo(inputText, todos));
+
       setInputText("");
-      localStorage.setItem("todos", JSON.stringify([
-        ...todos,
-        {
-          text: inputText,
-          completed: false,
-          id: Date.now(),
-        },
-      ]));
+      localStorage.setItem("todos", JSON.stringify(passSetTodo(inputText, todos)));
     } else alert("Cannot submit empty string");
   };
   return (
